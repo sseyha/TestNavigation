@@ -17,12 +17,15 @@ import { StackIndex } from './screen/StackIndex';
 
 export default class App extends Component {
   render() {
+
+    console.log('Obj: ', this.props.navigation);
+
     return (
       <View style={styles.container}>
         <View style={{flex:1, backgroundColor:'red'}}>
-          <TouchableOpacity onPress={()=>this.buttonClick(this.props.navigation)}>
+          <TouchableOpacity onPress={()=>this.buttonClick(navigation)}>
             <Text style={styles.welcome}>
-              Click
+              Navigate to Screen 2
             </Text>
           </TouchableOpacity>
         </View>
@@ -33,8 +36,9 @@ export default class App extends Component {
     );
   }
 
-  buttonClick(obj){
-    console.log(111, obj);
+  buttonClick(prop){
+    console.log('Props:', prop);
+    prop.navigation.navigate('Screen2');
   }
 
 }
