@@ -7,7 +7,7 @@ import Screen3 from './Screen3';
 
 export const StackIndex = StackNavigator({
     Screen1: {
-        screen: Screen1
+        screen: Screen3
     },
     Screen2: {
         screen: Screen2

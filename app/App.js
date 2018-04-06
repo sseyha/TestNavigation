@@ -13,17 +13,17 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import { NavigationActions } from 'react-navigation';
 import { StackIndex } from './screen/StackIndex';
 
 export default class App extends Component {
   render() {
 
-    console.log('Obj: ', this.props.navigation);
 
     return (
       <View style={styles.container}>
         <View style={{flex:1, backgroundColor:'red'}}>
-          <TouchableOpacity onPress={()=>this.buttonClick(navigation)}>
+          <TouchableOpacity onPress={()=>this._onPress()}>
             <Text style={styles.welcome}>
               Navigate to Screen 2
             </Text>
@@ -36,9 +36,9 @@ export default class App extends Component {
     );
   }
 
-  buttonClick(prop){
-    console.log('Props:', prop);
-    prop.navigation.navigate('Screen2');
+  _onPress(){
+    console.log(123, NavigationActions);
+    NavigationActions.navigate({ routeName: 'Screen2' });
   }
 
 }
